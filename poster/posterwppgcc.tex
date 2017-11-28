@@ -1,0 +1,272 @@
+%Fiquemos com DEUS e NOSSA SENHORA!
+\documentclass[final,hyperref={pdfpagelabels=false}]{beamer}
+\usepackage{grffile}
+\mode<presentation>{\usetheme{I6pd2}}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\usepackage{graphicx}
+\usepackage{color,epsfig,psfrag,url}
+\usepackage{xcolor,tikz,colortbl}
+\usepackage{ragged2e}
+\boldmath
+\usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}%diminui a escala do poster
+\usepackage{array,booktabs,tabularx}
+\newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
+\newcommand{\pphantom}{\textcolor{ta8aluminium}} % phantom introduces a vertical space in p formatted table columns??!!
+
+\setbeamertemplate{caption}[numbered]
+
+\listfiles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{figures/}}
+ 
+\title{\Huge Uma Abordagem Evolucionista para Otimização de Parâmetros de Máquinas de Boltzmann Restritas Discriminativas}
+\author{\Large $^1$Gustavo H. de Rosa, $^1$Jo\~ao P. Papa}
+\institute[UNESP, FATEC]{$^1$Universidade Estadual Paulista "Júlio de Mesquita Filho"} 
+%\url{http://www.recogna.fc.br}}
+\date[Jun, 2011]{Jun, 2011}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\columnheight}
+\setlength{\columnheight}{105cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{frame}
+  \begin{columns}
+    % ---------------------------------------------------------%
+    % Set up a column 
+    \begin{column}{.45\textwidth}
+      \begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+        \begin{minipage}[T]{.95\textwidth}  % tweaks the width, makes a new \textwidth
+          \parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the the height, width and textwidth simultaneously
+            % Since all columns are the same length, it is all nice and tidy.  You have to get the height empirically
+            % ---------------------------------------------------------%
+            % fill each column with content        
+  
+            \begin{block}{\vspace*{-7pt} \large I -- Introdução}
+              \begin{itemize}
+              
+              {\small \item As Máquinas de Boltzmann Restritas (\emph{Restricted Boltzmann Machine} - RBM) tem atraído considerável atenção nos últimos anos devido à sua simplicidade, alto grau de paralelismo e forte habilidade de representação~\cite{Hinton:12}. Entretanto, um dos principais problemas das RBMs está relacionado à seleção correta dos parâmetros.
+              \item A tarefa de seleção de modelo nas técnicas de aprendizado de máquina procura encontrar um conjunto plausível de parâmetros que maximizam algumas funções de ajuste, como por exemplo, a acurácia de reconhecimento de um classificador.
+              \item Contudo, ainda não é possível encontrar trabalhos que utilizem uma otimização meta-heurística baseada em Colônia de Abelhas Artificiais (\emph{Artificial Bee Colony} - ABC)~\cite{karaboga07}.
+              \item A ideia é utilizar uma versão discriminativa das Máquinas de Boltzmann Restritas (\emph{Discriminative Restricted Boltzmann Machine} - DRBM)~\cite{Larochelle:12}. Portanto, será criada uma colônia de abelhas artificiais, as quais são responsáveis por otimizar o caminho em busca de novas fontes de comida.}
+              
+              \end{itemize}              
+            \end{block}
+            %\vfill
+            \vspace*{14pt}
+            
+             \begin{block}{\vspace*{-7pt} \large II -- Máquinas de Boltzmann Restritas}
+				\begin{itemize}
+				
+				{\small \item As Máquinas de Boltzmann Restritas são redes neurais estocásticas baseadas em energia compostas por duas camadas de neurônios (visíveis e escondidos), em que a fase de treinamento é conduzida por meios de um aprendizado não supervisionado. A RBM é similar à clássica Máquina de Boltzmann~\cite{Ackley:88}, exceto que não existem conexões entre os neurônios da mesma camada. A Figura~\ref{f.rbm} descreve a arquitetura de uma Máquina de Boltzmann Restrita, a qual compreende uma camada visível $\textbf{v}$ com $m$ unidades e uma camada oculta $\textbf{h}$ com $n$ unidades.} \hspace*{20cm}
+
+				\begin{figure}[ht]
+\centering
+  \includegraphics[scale=1.00]{figures/rbm.eps}
+  \caption{Arquitetura de uma RBM.}
+  \label{f.rbm}
+\end{figure}				
+				\end{itemize}
+              %\vskip-1ex
+            \end{block}
+                       
+            \vspace*{14pt}
+            
+        \begin{block}{\vspace*{-7pt} III -- Máquinas de Boltzmann Restritas Discriminativas}
+        
+        \begin{itemize}
+        	
+        {\small \item As Máquinas de Boltzmann Restritas Discriminativas podem ser vistas como simples RBMs, entretanto com a adição de uma nova camada $y$, contendo o rótulo das amostras utilizadas. Agora, a adição de uma nova matriz $\textbf{U}$ é responsável por conectar a informação das classes das amostras à estrutura da rede. A Figura~\ref{f.drbm} é responsável por ilustrar a arquitetura de uma DRBM.} \hspace*{20cm}
+        
+        \begin{figure}[ht]
+\centering
+  \includegraphics[scale=1.00]{figures/drbm.eps}
+  \caption{Arquitetura de uma DRBM.}
+  \label{f.drbm}
+\end{figure}
+        
+        \end{itemize}
+                   	
+        \end{block}
+        
+        \begin{block}{\vspace*{-7pt} \large Referências}
+		{\small
+		\bibliographystyle{abbrv}
+		\bibliography{references}}
+		\end{block}
+        
+
+            %\vfill
+          }
+        \end{minipage}
+      \end{beamercolorbox}
+    \end{column}
+    % ---------------------------------------------------------%
+    % end the column
+
+    % ---------------------------------------------------------%
+    % Set up a column 
+    \begin{column}{.54\textwidth}
+      \begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+        \begin{minipage}[T]{.95\textwidth} % tweaks the width, makes a new \textwidth
+          \parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the the height, width and textwidth simultaneously
+            % Since all columns are the same length, it is all nice and tidy.  You have to get the height empirically
+            % ---------------------------------------------------------%
+            % fill each column with content
+                  
+            %\vfill
+            %\vspace*{14pt}
+        \begin{block}{\vspace*{-7pt} \large IV -- Metodologia}
+			
+			\begin{itemize}
+			
+			{\small \item Bases de Dados: MNIST e Semeion. A Figura~\ref{f.datasets} é responsável por ilustrar alguns exemplos destas bases de dados.
+			
+			\item Propomos em comparar o algoritmo ABC com o conhecido PSO, uma inicialização aleatória de parâmetros, denominada de Busca Aleatória (\emph{Random Search} - RS), e um classificador comum baseado em florestas de caminhos ótimos (\emph{Optimum-Path Forest} - OPF)~\cite{papa09}.} \hspace*{20cm}
+				
+			\end{itemize}
+			
+			\vspace*{14pt}
+			
+			\begin{figure}[!ht]
+  			\centerline{\begin{tabular}{cc}
+      		\includegraphics[width=9.1cm,height=9.1cm]{figures/mosaic_mnist.eps} & 
+      		\includegraphics[width=9.1cm,height=9.1cm]{figures/mosaic_semeion.eps} \\
+      		(a) & (b)
+			\end{tabular}}
+			\caption{Exemplos de treinamento das bases de dados (a) MNIST e (b) Semeion.}
+			\label{f.datasets}
+			\end{figure} 
+			
+			\begin{itemize}
+			{\small \item Com o intuito de prover uma análise estatística baseada no teste de sinais de Wilcoxon~\cite{Wilcoxon:45}, conduzimos uma validação-cruzada com 10 rodadas. Cada base de dados foi particionada em 30\% para treinamento, 20\% para validação e 50\% para teste. Foram empregados 10 agentes e 25 iterações de otimização para cada técnica de otimização, exceto a RS, a qual foi iniciada aleatoriamente dentro do intervalo especificado. O PSO foi inicializado com parâmetros $c_1 = 1.7$, $c_2 = 1.7$ e $w = 0.7$, e o ABC com limit $= 1000$.}
+			\end{itemize}
+
+
+              		%\vskip-1ex
+		\end{block}
+
+
+	    \begin{block}{\vspace*{-7pt} \large V -- Resultados Experimentais}
+	    
+	    \begin{itemize}
+
+	    {\small \item A Tabela~\ref{t.parameters} apresenta o intervalo para cada parâmetro da DRBM. Note que também empregamos $T = 10$ como o número de épocas para o treinamento das DRBMs, com \emph{mini-batches} de tamanho $20$. Todos os experimentos foram treinados com o algoritmo de Divergência Contrastiva (CD-1).}
+	    
+	    \end{itemize}
+	    
+	    {\small \begin{table}[h]
+		\centering
+		\caption{\footnotesize Intervalo dos parâmetros utilizados.}
+		\scalebox{0.8}{
+		\begin{tabular}{|c|c|} \hline
+		Parâmetro&Intervalo\\ \hline\hline
+		$n$ & $[5, 100]$\\ \hline
+		$\eta$ & $[0.01, 0.1]$ \\ \hline
+		$\lambda$ & $[0.0002, 0.002]$ \\ \hline
+		$\alpha$ & $[0.05, 0.5]$ \\ \hline
+		\end{tabular}
+		}
+		\label{t.parameters}
+		\end{table}}
+		
+		\begin{itemize}
+		
+		{\small \item Também apresentamos os resultados experimentais considerando a principal proposta deste trabalho. As Tabelas 2 e 3 são responsáveis por ilustrar a média da acurácia final e dos melhores parâmetros encontrados por cada técnica de otimização. Os melhores resultados, de acordo com o teste de Wilcoxon, estão em negrito.}
+			
+		\end{itemize}
+		
+		\vspace*{14pt}
+	
+	{\small \begin{table}[!htb]
+\begin{center}
+\caption{Média da acurácia final e dos melhores parâmetros considerando a base de dados MNIST.}
+\resizebox{.4\columnwidth}{!}{
+\begin{tabular}{l|l|l|l|l|l|}
+\cline{2-6}
+                          & \multicolumn{1}{c|}{Acurácia} & \multicolumn{4}{c|}{Melhores Parâmetros} \\ \cline{2-6} 
+                          & & \multicolumn{1}{c|}{$n$} & \multicolumn{1}{c|}{$\eta$} & \multicolumn{1}{c|}{$\lambda$} & \multicolumn{1}{c|}{$\alpha$} \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{D2D2D2}RS}   &  \cellcolor[HTML]{EFEFEF} 60.47\%   &  \cellcolor[HTML]{EFEFEF} 47.018      &  \cellcolor[HTML]{EFEFEF} 0.0411 &  \cellcolor[HTML]{EFEFEF} 0.0012 &  \cellcolor[HTML]{EFEFEF} 0.2128     \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{D2D2D2}PSO}   &  \cellcolor[HTML]{EFEFEF} 84.40\%   &  \cellcolor[HTML]{EFEFEF} 94.694      &  \cellcolor[HTML]{EFEFEF} 0.0931 &  \cellcolor[HTML]{EFEFEF} 0.0004 &  \cellcolor[HTML]{EFEFEF} 0.4678     \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{D2D2D2}ABC}   &  \cellcolor[HTML]{EFEFEF} 83.63\%   &  \cellcolor[HTML]{EFEFEF} 86.667      &  \cellcolor[HTML]{EFEFEF} 0.0964 &  \cellcolor[HTML]{EFEFEF} 0.0005 &  \cellcolor[HTML]{EFEFEF} 0.3803     \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{D2D2D2}OPF}   &  \cellcolor[HTML]{EFEFEF} \textbf{90.18\%}   &  \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF} -      } & \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF} -      } &  \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF} -      } &  \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF} -      }   \\ \hline
+\end{tabular}
+}
+\\~\\
+\end{center}
+\label{t.table_mnist}
+\end{table}}
+
+{\small \begin{table}[!htb]
+\begin{center}
+\caption{Média da acurácia final e dos melhores parâmetros considerando a base de dados Semeion.}
+\resizebox{.4\columnwidth}{!}{
+\begin{tabular}{l|l|l|l|l|l|}
+\cline{2-6}
+                          & \multicolumn{1}{c|}{Acurácia} & \multicolumn{4}{c|}{Melhores Parâmetros} \\ \cline{2-6} 
+                          & & \multicolumn{1}{c|}{$n$} & \multicolumn{1}{c|}{$\eta$} & \multicolumn{1}{c|}{$\lambda$} & \multicolumn{1}{c|}{$\alpha$} \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{D2D2D2}RS}   &  \cellcolor[HTML]{EFEFEF} 85.32\%   &  \cellcolor[HTML]{EFEFEF} 46.077      &  \cellcolor[HTML]{EFEFEF} 0.0499 &  \cellcolor[HTML]{EFEFEF} 0.0009 &  \cellcolor[HTML]{EFEFEF} 0.2599     \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{D2D2D2}PSO}   &  \cellcolor[HTML]{EFEFEF} \textbf{92.78\%}   &  \cellcolor[HTML]{EFEFEF} 97.281      &  \cellcolor[HTML]{EFEFEF} 0.0991 &  \cellcolor[HTML]{EFEFEF} 0.0007 &  \cellcolor[HTML]{EFEFEF} 0.4749     \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{D2D2D2}ABC}   &  \cellcolor[HTML]{EFEFEF} \textbf{92.37\%}   &  \cellcolor[HTML]{EFEFEF} 90.668      &  \cellcolor[HTML]{EFEFEF} 0.0962 &  \cellcolor[HTML]{EFEFEF} 0.0006 &  \cellcolor[HTML]{EFEFEF} 0.3533     \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{D2D2D2}OPF}   &  \cellcolor[HTML]{EFEFEF} \textbf{93.26\%}   &  \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF} -      } & \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF} -      } &  \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF} -      } &  \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF} -      }   \\ \hline
+\end{tabular}
+}
+\\~\\
+\end{center}
+\label{t.table_semeion}
+\end{table}}
+			
+		\vspace*{14pt}
+		
+      	\end{block}
+
+         \vspace*{8pt}
+
+	 \begin{block}{\vspace*{-7pt} \large VI -- Conclusões}
+	    \begin{itemize}
+	     {\small \item Neste trabalho, tratamos o problema de calibrar os parâmetros de uma DRBM por meio de uma Colônia de Abelhas Artificiais. Os experimentos foram realizados em duas bases de dados públicas para classificação de dígitos manuscritos.
+
+		\item Os experimentos demonstraram os péssimos resultados de uma inicialização aleatória de parâmetros, similar ao uso empírico dos mesmos. O PSO e o ABC demonstraram resultados similares, sendo estatisticamente iguais ao OPF para a base de dados Semeion. Contudo, o classificador OPF obteve os melhores resultados para a base de dados MNIST.}
+		
+	     \end{itemize}
+	     \end{block}
+	     
+	 % ---------------------------------------------------------%
+	 
+\vspace*{8pt}
+        \begin{block}{\vspace*{-7pt} \large Agradecimentos}
+		
+		{\small Os autores gostariam de agradecer ao apoio fomentado pela FAPESP \#2015/25739-4.}
+		\end{block}	
+
+\vspace*{8pt}
+
+	
+
+   }
+          % ---------------------------------------------------------%
+          % end the column
+        \end{minipage}
+      \end{beamercolorbox}
+    \end{column}
+    % ---------------------------------------------------------%
+    % end the column
+  \end{columns}
+  %\vskip1ex
+  %\tiny\hfill\textcolor{ta2gray}{Created with \LaTeX \texttt{beamerposter}  \url{http://www-i6.informatik.rwth-aachen.de/~dreuw/latexbeamerposter.php}}
+
+%  \tiny\hfill{Created with \LaTeX \texttt{beamerposter}  \url{http://www-i6.informatik.rwth-aachen.de} \hskip1em}
+\end{frame}
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% End:
