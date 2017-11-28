@@ -1,0 +1,83 @@
+\documentclass[final,hyperref={pdfpagelabels=false}]{beamer}
+
+\usepackage{grffile}
+\mode<presentation>{\usetheme{I6pd2}}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\usepackage{graphicx}
+\usepackage{color,epsfig,psfrag,url}
+\usepackage{xcolor,tikz,colortbl}
+\usepackage{ragged2e}
+\boldmath
+\usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
+\usepackage{array,booktabs,tabularx}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}\newcommand{\pphantom}{\textcolor{ta8aluminium}}
+\setbeamertemplate{caption}[numbered]
+
+\listfiles
+
+\graphicspath{{figs/}}
+ 
+\title{\Huge Título da Apresentação}
+\author{\Large $^1$Nome do Autor, $^2$Nome de outro Autor}
+\institute[UNESP]{$^1$Universidade Estadual Paulista "Júlio de Mesquita Filho", $^2$Segunda Filiação} 
+
+\newlength{\columnheight}
+\setlength{\columnheight}{105cm}
+
+\begin{document}
+\begin{frame}
+	\begin{columns}
+		\begin{column}{.45\textwidth}
+			\begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+				\begin{minipage}[T]{.95\textwidth}  
+					\parbox[t][\columnheight]{\textwidth}{
+						\begin{block}{\vspace*{-7pt} \large I -- Introdução}                    
+						\end{block}
+						\vspace*{14pt}
+						            
+						\begin{block}{\vspace*{-7pt} \large II -- Seção 2}
+						\end{block}               
+						\vspace*{14pt}
+						            
+						\begin{block}{\vspace*{-7pt} \large III -- Seção 3}
+						\end{block}
+						\vspace*{14pt}
+						        
+						\begin{block}{\vspace*{-7pt} \large Referências}
+							{\small
+								\bibliographystyle{abbrv}
+								\bibliography{references}}
+						\end{block}
+					}
+				\end{minipage}
+			\end{beamercolorbox}
+		\end{column}
+
+		\begin{column}{.54\textwidth}
+			\begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+				\begin{minipage}[T]{.95\textwidth}
+					\parbox[t][\columnheight]{\textwidth}{
+						\begin{block}{\vspace*{-7pt} \large IV -- Seção 4}	
+						\end{block}
+						\vspace*{14pt}
+						
+						\begin{block}{\vspace*{-7pt} \large V -- Seção 5}		
+						\end{block}
+						\vspace*{14pt}
+						
+						\begin{block}{\vspace*{-7pt} \large VI -- Conclusões}
+						\end{block}	 
+						\vspace*{14pt}
+						
+						\begin{block}{\vspace*{-7pt} \large Agradecimentos}
+						\end{block}	
+						\vspace*{14pt}
+					}
+				\end{minipage}
+			\end{beamercolorbox}
+		\end{column}
+	\end{columns}
+	\end{frame}
+\end{document}

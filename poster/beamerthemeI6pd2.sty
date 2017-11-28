@@ -1,51 +1,51 @@
-\ProvidesPackage{beamerthemeI6pd2}  % this style was created by Thomas Deselaers an Philippe Dreuw
+\ProvidesPackage{beamerthemeI6pd2}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{tangocolors}
 \selectcolormodel{cmyk}
 \mode<presentation>
 
-\definecolor{i6colorscheme3}{HTML}{FFFFFF}  % e.g. for poster background 
+\definecolor{i6colorscheme3}{HTML}{FFFFFF}
 \definecolor{i6colorscheme4}{HTML}{666666} 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{mainRecogna}{cmyk}{0.82,0.84,0,0}
+\definecolor{altRecogna}{cmyk}{0.67,0.24,0,0}
+\definecolor{grey}{rgb}{0.90196, 0.90196, 0.90196}
 
-\setbeamercolor{headline}{fg=taskyblue,bg=ta2skyblue}
-\setbeamercolor{footline}{fg=taskyblue, bg=ta3aluminium}
+\setbeamercolor{headline}{fg=altRecogna,bg=mainRecogna}
+
+\setbeamercolor{footline}{fg=white, bg=mainRecogna}
 \setbeamerfont{footline}{size=\large,series=\tt}
-\setbeamercolor{separation line}{bg=ta2aluminium}
-\setbeamercolor{title in headline}{fg=taskyblue, bg=ta2aluminium}
-\setbeamercolor{author in headline}{fg=taskyblue}
-\setbeamercolor{institute in headline}{fg=taskyblue}
 
-\setbeamercolor{framesubtitle}{fg=ta3aluminium, bg=ta2aluminium}
-\setbeamercolor{author in head/foot}{fg=ta2aluminium, bg=ta2skyblue}
-\setbeamercolor{title in head/foot}{fg=ta2aluminium, bg=ta2skyblue}
+\setbeamercolor{separation line}{bg=altRecogna}
 
-\setbeamercolor*{normal text}{fg=tachameleon, bg=ta2aluminium}
-\setbeamercolor*{block body}{bg=white,fg=black} %altera a cor de fundo dos quadros 
-\setbeamercolor*{block title}{fg=taskyblue,bg=ta3aluminium}
+\setbeamercolor{title in headline}{fg=white, bg=mainRecogna}
+
+\setbeamercolor{author in headline}{fg=white}
+
+\setbeamercolor{institute in headline}{fg=white}
+
+\setbeamercolor{framesubtitle}{fg=grey, bg=mainRecogna}
+
+\setbeamercolor{author in head/foot}{fg=grey, bg=mainRecogna}
+
+\setbeamercolor{title in head/foot}{fg=grey, bg=mainRecogna}
+
+\setbeamercolor*{normal text}{fg=white, bg=grey}
+
+\setbeamercolor*{block body}{bg=white,fg=black} 
+\setbeamercolor*{block title}{fg=white,bg=mainRecogna}
 \setbeamerfont{block title}{size=\large,series=\bf}
-\setbeamercolor{upper separation line head}{fg=ta2aluminium}
 
-\setbeamercolor*{example body}{fg=ta3aluminium,bg=ta2skyblue}
-\setbeamercolor*{example text}{fg=ta3aluminium,bg=ta2skyblue}
-\setbeamercolor*{example title}{bg=taskyblue,fg=ta2aluminium}
+\setbeamercolor{upper separation line head}{fg=grey}
 
-%\setbeamercolor{alerted text}{fg=ta3aluminium}
-
-%\setbeamercolor{example text}{fg=taskyblue}
-\setbeamercolor{structure}{fg=ta3skyblue}
+\setbeamercolor{structure}{fg=grey}
 
 \setbeamertemplate{itemize items}[triangle]
-\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{block begin}{
   \vskip.75ex
   \begin{beamercolorbox}[ht=3.5ex,dp=0.5ex,center,leftskip=-1em,colsep*=.75ex]{block title}%
     \usebeamerfont*{block title}%
-    {\phantom{Gg}\insertblocktitle}% phantom because of baseline problem
+    {\phantom{Gg}\insertblocktitle}
   \end{beamercolorbox}%
   {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
   \usebeamerfont{block body}%
@@ -56,22 +56,25 @@
   \end{beamercolorbox}
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setbeamertemplate{headline}{  %Alterações no cabeçalho são feitas aqui
+\setbeamertemplate{headline}{
   \leavevmode
 
   \begin{beamercolorbox}[wd=\paperwidth]{headline}
     \begin{columns}[T]
-      \begin{column}{.02\paperwidth}
+      \begin{column}{.2\paperwidth}
+      \begin{center}
+      	\includegraphics[width=.75 \linewidth]{figs/recogna_logo.eps}
+      \end{center}
+
       \end{column}
-      \begin{column}{.22\paperwidth}
+      \begin{column}{.2\paperwidth}
        \vskip11ex
         \begin{center}
-         \includegraphics[width=.95 \linewidth]{figures/unesp-logo_branco.png}
+         \includegraphics[width=.75 \linewidth]{figs/unesp_white.png}
         \end{center}
         \vskip2ex
       \end{column}
-      \begin{column}{.73\paperwidth}
+      \begin{column}{.6\paperwidth}
         \vskip4ex
         \raggedleft
         \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
@@ -89,22 +92,6 @@
   \end{beamercolorbox}
 }
 
-%  \setbeamertemplate{headline}{  
-%    \leavevmode
-%    \begin{beamercolorbox}[sep=0.5cm,wd=.8\paperwidth]{headline}
-%      \usebeamercolor{title in headline}{\raggedleft\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
-%      \usebeamercolor{author in headline}{\raggedleft\color{fg}\large{\insertauthor}\\[1ex]}
-%      \usebeamercolor{institute in headline}{\raggedleft\color{fg}\large{\insertinstitute}\\[1ex]}     
-%    \end{beamercolorbox}%
-%    \begin{beamercolorbox}[wd=.2\paperwidth]{logo in headline}
-%      \centering
-%      \LARGE{LOGO}
-%    \end{beamercolorbox}  
-
-
-%}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{footline}{
   \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
     \rule{0pt}{3pt}
@@ -123,27 +110,13 @@
   \end{beamercolorbox}
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Display a grid to help align images ... and it looks nice with this color scheme
-%\beamertemplategridbackground[1cm]
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mode<all>
 
 % adapt height of imtemize rectangles
 \setbeamertemplate{itemize items}[triangle]
 \setbeamertemplate{itemize item}{\raisebox{0.12ex}{$\blacktriangleright$}\hskip0.1em}
 \setbeamertemplate{itemize subitem}{\raisebox{0.12ex}{$\triangleright$}\hskip0.1em}
-% or define your own template using \defbeamertemplate{itemize item}, see beameruserguide.pdf
 
-% equal font sizes for all levels
 \setbeamerfont{itemize/enumerate body}{size=\normalsize}
 \setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
 \setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-PDF-mode: t
-%%% TeX-master: "poster-surf"
-%%% End: 
