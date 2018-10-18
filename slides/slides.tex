@@ -15,7 +15,7 @@
 \usepackage{hhline}
 \usepackage{xcolor,tikz,bm,colortbl}
 \usepgfplotslibrary{dateplot}
-
+ 
 \definecolor{mainRecogna}{RGB}{74,0,214}
 \definecolor{altRecogna}{RGB}{9,166,253}
 
@@ -34,11 +34,30 @@
 Faculdade de Ciências (FC) / Departamento de Computação (DCo)
 \\
 Bauru, SP - Brasil
-\\ \\ \\
-\hspace*{0pt}
-\includegraphics[height=2.5cm]{figs/recogna_logo.eps}
-\hspace*{100pt}
-\includegraphics[height=1cm]{figs/unesp.png}}
+\\~\\~\\
+% This part ensures that Recogna and UNESP logos are vertically centered. You can change their sizes by updating the values in lines (A) and (B), but notice that their sum must not be larger than 1.
+\vspace{0.5cm}
+\begin{columns}
+	\begin{column}{0.4\textwidth}
+		\parbox[c][0.1\textheight][c]{\columnwidth}{
+			\begin{figure}
+				\centering
+				\includegraphics[width=\textwidth]{figs/recogna_logo.eps}%
+			\end{figure}
+		}
+		
+	\end{column}
+	\begin{column}{0.35\textwidth}
+		\parbox[c][0.1\textheight][c]{\columnwidth}{
+			\begin{figure}
+				\centering
+				\includegraphics[width=\textwidth]{figs/unesp.png}%
+			\end{figure}
+		}
+		
+	\end{column}
+\end{columns}
+}
 
 \begin{document}
 
