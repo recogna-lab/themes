@@ -4,4 +4,6 @@ Recogna's themed source files for slides and poster presentations. Note that we 
 
 ## Overleaf
 
+ * <a href=https://pt.overleaf.com/read/dtmsgqckzgsq>poster</a>
  * <a href=https://pt.overleaf.com/read/wggshjvzhhxn>slides</a>
+ 

@@ -1,0 +1,59 @@
+% Sets the colouring model
+\selectcolormodel{cmyk}
+
+% Sets the mode
+\mode<presentation>
+
+% Defines the color palette
+\definecolor{main}{cmyk}{0.82,0.84,0,0}
+\definecolor{alt}{cmyk}{0.67,0.24,0,0}
+\definecolor{grey}{rgb}{0.90196, 0.90196, 0.90196}
+\definecolor{mediumgrey}{rgb}{0.45196, 0.45196, 0.45196}
+\definecolor{darkgrey}{rgb}{0.20196, 0.20196, 0.20196}
+
+% Sets the whole structure
+\setbeamercolor{structure}{fg=grey}
+
+% Sets the headline
+\setbeamercolor{headline}{fg=alt,bg=main}
+\setbeamercolor{title in headline}{fg=white, bg=main}
+\setbeamercolor{author in headline}{fg=white}
+\setbeamercolor{institute in headline}{fg=white}
+
+% Sets the footline
+\setbeamercolor{footline}{fg=white, bg=main}
+\setbeamerfont{footline}{size=\large,series=\tt}
+
+% Sets the separation line
+\setbeamercolor{separation line}{bg=alt}
+\setbeamercolor{upper separation line head}{fg=grey}
+
+% Sets the subtitle
+\setbeamercolor{framesubtitle}{fg=grey, bg=main}
+
+% Sets the head/foot
+\setbeamercolor{author in head/foot}{fg=grey, bg=main}
+\setbeamercolor{title in head/foot}{fg=grey, bg=main}
+
+% Sets the text
+\setbeamercolor*{normal text}{fg=white, bg=grey}
+
+% Sets the blocks
+\setbeamercolor*{block body}{bg=white,fg=black} 
+\setbeamercolor*{block title}{fg=white,bg=main}
+\setbeamerfont{block title}{size=\large,series=\bf}
+
+% Sets the captions
+\setbeamercolor{caption name}{fg=black}
+\setbeamercolor{caption text}{fg=black}
+
+% Sets the bibliography
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor{bibliography entry title}{fg=darkgrey} 
+\setbeamercolor{bibliography entry location}{fg=mediumgrey} 
+\setbeamercolor{bibliography entry note}{fg=mediumgrey} 
+
+% Sets the itemize
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}

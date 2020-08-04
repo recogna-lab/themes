@@ -1,83 +1,36 @@
+% Defines the document class
 \documentclass[final,hyperref={pdfpagelabels=false}]{beamer}
 
-\usepackage{grffile}
-\mode<presentation>{\usetheme{I6pd2}}
-\usepackage[brazil]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath,amsthm, amssymb, latexsym}
-\usepackage{graphicx}
-\usepackage{color,epsfig,psfrag,url}
-\usepackage{xcolor,tikz,colortbl}
-\usepackage{ragged2e}
-\boldmath
-\usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
-\usepackage{array,booktabs,tabularx}
-\newcolumntype{Z}{>{\centering\arraybackslash}X}\newcommand{\pphantom}{\textcolor{ta8aluminium}}
-\setbeamertemplate{caption}[numbered]
+% Imports the pre-defined packages
+\usepackage{styles/packages}
 
-\listfiles
+% Imports the pre-defined templates
+\usepackage{styles/templates}
 
-\graphicspath{{figs/}}
- 
+% Imports the pre-defined colors
+\usepackage{styles/colors}
+
+ % Defines meta-information about the presentation
 \title{\Huge Título da Apresentação}
-\author{\Large $^1$Nome do Autor, $^2$Nome de outro Autor}
-\institute[UNESP]{$^1$Universidade Estadual Paulista "Júlio de Mesquita Filho", $^2$Segunda Filiação} 
+\author{\Large $^1$Nome do Autor, $^2$Nome do Segundo Autor}
+\institute[UNESP]{$^1$Universidade Estadual Paulista ``Júlio de Mesquita Filho", $^2$Segunda Filiação} 
 
+% Sets the new length of columns
 \newlength{\columnheight}
 \setlength{\columnheight}{105cm}
 
+% Finishes up the preamble definition and starts the document
 \begin{document}
-\begin{frame}
-	\begin{columns}
-		\begin{column}{.45\textwidth}
-			\begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
-				\begin{minipage}[T]{.95\textwidth}  
-					\parbox[t][\columnheight]{\textwidth}{
-						\begin{block}{\vspace*{-7pt} \large I -- Introdução}                    
-						\end{block}
-						\vspace*{14pt}
-						            
-						\begin{block}{\vspace*{-7pt} \large II -- Seção 2}
-						\end{block}               
-						\vspace*{14pt}
-						            
-						\begin{block}{\vspace*{-7pt} \large III -- Seção 3}
-						\end{block}
-						\vspace*{14pt}
-						        
-						\begin{block}{\vspace*{-7pt} \large Referências}
-							{\small
-								\bibliographystyle{abbrv}
-								\bibliography{references}}
-						\end{block}
-					}
-				\end{minipage}
-			\end{beamercolorbox}
-		\end{column}
 
-		\begin{column}{.54\textwidth}
-			\begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
-				\begin{minipage}[T]{.95\textwidth}
-					\parbox[t][\columnheight]{\textwidth}{
-						\begin{block}{\vspace*{-7pt} \large IV -- Seção 4}	
-						\end{block}
-						\vspace*{14pt}
-						
-						\begin{block}{\vspace*{-7pt} \large V -- Seção 5}		
-						\end{block}
-						\vspace*{14pt}
-						
-						\begin{block}{\vspace*{-7pt} \large VI -- Conclusões}
-						\end{block}	 
-						\vspace*{14pt}
-						
-						\begin{block}{\vspace*{-7pt} \large Agradecimentos}
-						\end{block}	
-						\vspace*{14pt}
-					}
-				\end{minipage}
-			\end{beamercolorbox}
-		\end{column}
+% Initializes the poster
+\begin{frame}
+	% Defines an environment for the columns
+	\begin{columns}
+		% Left column
+		\input{sections/left_column.tex}
+		
+		% Right column
+		\input{sections/right_column.tex}
 	\end{columns}
 	\end{frame}
 \end{document}
