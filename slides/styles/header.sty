@@ -1,4 +1,37 @@
+% Adding a vertical space to better visualization
+\vspace*{0.5cm}
+
+% Defines the columns with the corresponding logos
+\begin{columns}
+	\begin{column}{2cm}
+		\parbox[c][0\textheight][c]{\columnwidth}{
+			\begin{figure}
+				\centering
+				\includegraphics[width=3cm]{figs/recogna.eps}
+			\end{figure}
+		}
+	\end{column}
+	\hspace*{4.5cm}
+	\begin{column}{4cm}
+		\parbox[c][0\textheight][c]{\columnwidth}{
+			\begin{figure}
+				\centering
+				\includegraphics[width=3cm]{figs/unesp.png}
+			\end{figure}
+		}
+	\end{column}
+\end{columns}
+
+% Extra spacing for the horizontal line
+\vspace*{0.85cm}
+
+% Horizontal line
 \hbox{
-    \begin{beamercolorbox}[wd=\paperwidth,ht=2cm]{black}
-    \end{beamercolorbox}
+	\hspace{-0.22cm}
+	\textcolor{alt}{
+		\rule{0.9975\textwidth}{0.4pt}
+	}
 }
+
+% Removing extra spacing
+\vspace*{-1.65cm}
