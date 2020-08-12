@@ -1,6 +1,9 @@
 % Uses numbering in table of contents
 \setbeamertemplate{section in toc}[sections numbered]
-\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=2.5em\rlap{\hskip-2em\inserttocsectionnumber.\inserttocsubsectionnumber}\inserttocsubsection\par}
+
+% Using numbered bibliography
+\setbeamertemplate{bibliography item}{\insertbiblabel}
 
 % Defining section page template
 \defbeamertemplate*{section page}{customprogress}{
